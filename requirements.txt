@@ -1,3 +1,5 @@
-tensorflow-cpu
+tensorflow
 opencv-python
+gunicorn
 numpy
+flask

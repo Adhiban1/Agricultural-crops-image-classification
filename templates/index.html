@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {
+            font-size: 120%;
+        }
+
+        .image {
+            margin-top: 25px; 
+            border-radius: 10px;
+            width: 600px;
+        }
+
+        .error {
+            color: red;
+        }
+
+        .file {
+            background-color:bisque;
+            padding: 10px;
+            border-radius: 10px;
+            font-size: 120%;
+        }
+
+        .submit {
+            font-size: 100%;
+            padding: 15px;
+            font-weight: bold;
+            border-radius: 10px;
+            cursor: pointer;
+            color: dodgerblue;
+        }
+
+        .submit:hover {
+            opacity: 0.7;
+        }
+
+        .submit:active {
+            opacity: 0.5;
+        }
+
+        input::file-selector-button {
+            font-weight: bold;
+            color: dodgerblue;
+            padding: 0.5em;
+            border: thin solid grey;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        
+        input::file-selector-button:hover {
+            opacity: 0.7;
+        }
+
+        input::file-selector-button:active {
+            opacity: 0.5;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>Agricultural crops image classification</h1>
+        <form action="/" method="POST" enctype="multipart/form-data">
+            <input type="file" name="file" class="file">
+            <input type="submit" class="submit">
+        </form>
+        {% if show_image %}
+        <img src="static/image.jpg" class="image">
+        {% endif %}
+        <p>Crop: {{image_type}}</p>
+        {% if error != '' %}
+        <p class="error">Error: {{error}}</p>
+        {% endif %}
+    </center>
+</body>
+</html>

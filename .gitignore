@@ -1,2 +1,6 @@
 model
 model.zip
+venv
+__pycache__
+test.py
+static/image.jpg
